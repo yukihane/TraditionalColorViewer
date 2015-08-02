@@ -10,69 +10,69 @@ import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
 
 /**
- * “`“F‚Ìî•ñ‚ğ•\¦‚·‚é {@link FragmentActivity}.
+ * ä¼çµ±è‰²ã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ {@link FragmentActivity}.
  */
 public class TraditionalColorActivity extends FragmentActivity {
     
-    /** Fî•ñ‚ğ•\¦‚·‚é {@link ViewPager}. */
+    /** è‰²æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ {@link ViewPager}. */
     private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // ƒŒƒCƒAƒEƒg‚ğ‚Â‚­‚é
+        // ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’ã¤ãã‚‹
         setContentView(R.layout.activity_traditional_color);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         
-        // PagerAdapter ‚ğ‚Â‚­‚é
+        // PagerAdapter ã‚’ã¤ãã‚‹
         FragmentManager fm = getSupportFragmentManager();
         TraditionalColorPagerAdapter adapter = new TraditionalColorPagerAdapter(fm);
         adapter.addAll(getColorList());
         
-        // ViewPager ‚ÉƒZƒbƒg‚·‚é
+        // ViewPager ã«ã‚»ãƒƒãƒˆã™ã‚‹
         mViewPager.setAdapter(adapter);
     }
     
     /**
-     * Fî•ñƒŠƒXƒg‚ğ•Ô‚·.
-     * @return Fî•ñƒŠƒXƒg
+     * è‰²æƒ…å ±ãƒªã‚¹ãƒˆã‚’è¿”ã™.
+     * @return è‰²æƒ…å ±ãƒªã‚¹ãƒˆ
      */
     private ArrayList<SparseArrayCompat<String>> getColorList() {
         ArrayList<SparseArrayCompat<String>> list = new ArrayList<SparseArrayCompat<String>>();
         
         SparseArrayCompat<String> color1 = new SparseArrayCompat<String>();
         color1.append(0, "#727171");
-        color1.append(1, "“İF (‚É‚Ñ‚¢‚ë)");
-        color1.append(2, "‚©‚·‚©‚É—Î‚â’ƒ‚ÌF–¡‚ğ‚ÂƒOƒŒƒC‚É‹ß‚¢FB");
+        color1.append(1, "éˆè‰² (ã«ã³ã„ã‚)");
+        color1.append(2, "ã‹ã™ã‹ã«ç·‘ã‚„èŒ¶ã®è‰²å‘³ã‚’æŒã¤ã‚°ãƒ¬ã‚¤ã«è¿‘ã„è‰²ã€‚");
         SparseArrayCompat<String> color2 = new SparseArrayCompat<String>();
         color2.append(0, "#2792c3");
-        color2.append(1, "ã| (‚Í‚È‚¾)");
-        color2.append(2, "—•‚Ì’Pˆêõ‚ß‚Ìƒ³‚ÈÂFB¢‰Ô“c£‚Æ‚à‘‚­B");
+        color2.append(1, "ç¸¹ (ã¯ãªã )");
+        color2.append(2, "è—ã®å˜ä¸€æŸ“ã‚ã®ç´”æ­£ãªé’è‰²ã€‚ï½¢èŠ±ç”°ï½£ã¨ã‚‚æ›¸ãã€‚");
         SparseArrayCompat<String> color3 = new SparseArrayCompat<String>();
         color3.append(0, "#917347");
-        color3.append(1, "‹€—tF (‚­‚¿‚Î‚¢‚ë)");
-        color3.append(2, "‹€‚¿‚½—‚¿—t‚ÌF‚É—‚½ŠŒF‚ÌA‰©òF(u‰©“‚’ƒv)B¢‹€—tl\”ªF£‚ÆŒ¾‚¤Œ¾—t‚ª‚ ‚éB");
+        color3.append(1, "æœ½è‘‰è‰² (ãã¡ã°ã„ã‚)");
+        color3.append(2, "æœ½ã¡ãŸè½ã¡è‘‰ã®è‰²ã«ä¼¼ãŸè¤è‰²ã®ã€é»„æ©™è‰²(ã€Œé»„å”èŒ¶ã€)ã€‚ï½¢æœ½è‘‰å››åå…«è‰²ï½£ã¨è¨€ã†è¨€è‘‰ãŒã‚ã‚‹ã€‚");
         SparseArrayCompat<String> color4 = new SparseArrayCompat<String>();
         color4.append(0, "#3a5b52");
-        color4.append(1, "’‰¦ (‚Ş‚µ‚ ‚¨)");
-        color4.append(2, "‹Ê’‚Ì‰Hª‚ÌF‚ÉŒ©‚é‚æ‚¤‚ÈAˆÃ‚¢Â‚İ‚Ì—ÎB¢’Â£‚Æ‚à‘‚­B");
+        color4.append(1, "è™«è¥– (ã‚€ã—ã‚ãŠ)");
+        color4.append(2, "ç‰è™«ã®ç¾½æ ¹ã®è‰²ã«è¦‹ã‚‹ã‚ˆã†ãªã€æš—ã„é’ã¿ã®ç·‘ã€‚ï½¢è™«é’ï½£ã¨ã‚‚æ›¸ãã€‚");
         SparseArrayCompat<String> color5 = new SparseArrayCompat<String>();
         color5.append(0, "#f8b500");
-        color5.append(1, "RF (‚â‚Ü‚Ô‚«‚¢‚ë)");
-        color5.append(2, "R‚Ì‰Ô‚ÌF‚Ì‚æ‚¤‚ÈAá‚¦‚½Ô–¡‚Ì‰©FB¢‰©‹àF£‚Æ‚àŒ¾‚¤B");
+        color5.append(1, "å±±å¹è‰² (ã‚„ã¾ã¶ãã„ã‚)");
+        color5.append(2, "å±±å¹ã®èŠ±ã®è‰²ã®ã‚ˆã†ãªã€å†´ãˆãŸèµ¤å‘³ã®é»„è‰²ã€‚ï½¢é»„é‡‘è‰²ï½£ã¨ã‚‚è¨€ã†ã€‚");
         SparseArrayCompat<String> color6 = new SparseArrayCompat<String>();
         color6.append(0, "#e5abbe");
-        color6.append(1, "Î’|F (‚¹‚«‚¿‚­‚¢‚ë)");
-        color6.append(2, "ƒiƒfƒVƒR‰È‚ÌA•¨ƒZƒLƒ`ƒN‚Ì‰Ô‚Ì‚æ‚¤‚È’W‚¢ÔFB");
+        color6.append(1, "çŸ³ç«¹è‰² (ã›ãã¡ãã„ã‚)");
+        color6.append(2, "ãƒŠãƒ‡ã‚·ã‚³ç§‘ã®æ¤ç‰©ã‚»ã‚­ãƒã‚¯ã®èŠ±ã®ã‚ˆã†ãªæ·¡ã„èµ¤è‰²ã€‚");
         SparseArrayCompat<String> color7 = new SparseArrayCompat<String>();
         color7.append(0, "#e60026");
-        color7.append(1, "g˜@ (‚®‚ê‚ñ)");
-        color7.append(2, "·‚ñ‚É”R‚¦ã‚ª‚é‰Š‚ÌFBug˜@’n–iŠ¦‚³‚Ì‚½‚ß‚É”ç•†‚ª—ô‚¯ŒŒ‚ª—¬‚êAg‚Ì˜@‚Ì‰Ô‚Ì‚æ‚¤‚É‚È‚éjv‚ğug‚Ì‰Š‚Ì”R‚¦—§‚ÂŠv‚ÆŒë”F‚µ‚½‚Ì‚ª—R—ˆB");
+        color7.append(1, "ç´…è“® (ãã‚Œã‚“)");
+        color7.append(2, "ç››ã‚“ã«ç‡ƒãˆä¸ŠãŒã‚‹ç‚ã®è‰²ã€‚ã€Œç´…è“®åœ°ç„ï¼ˆå¯’ã•ã®ãŸã‚ã«çš®è†šãŒè£‚ã‘è¡€ãŒæµã‚Œã€ç´…ã®è“®ã®èŠ±ã®ã‚ˆã†ã«ãªã‚‹ï¼‰ã€ã‚’ã€Œç´…ã®ç‚ã®ç‡ƒãˆç«‹ã¤æ‰€ã€ã¨èª¤èªã—ãŸã®ãŒç”±æ¥ã€‚");
         SparseArrayCompat<String> color8 = new SparseArrayCompat<String>();
         color8.append(0, "#007b43");
-        color8.append(1, "í”ÖF (‚Æ‚«‚í‚¢‚ë)");
-        color8.append(2, "ƒXƒM‚È‚Ç‚Ìí—Î÷‚Ì—t‚Ì‚æ‚¤‚È‚­‚·‚ñ‚¾—ÎFB");
+        color8.append(1, "å¸¸ç£è‰² (ã¨ãã‚ã„ã‚)");
+        color8.append(2, "ã‚¹ã‚®ãªã©ã®å¸¸ç·‘æ¨¹ã®è‘‰ã®ã‚ˆã†ãªãã™ã‚“ã ç·‘è‰²ã€‚");
         
         list.add(color1);
         list.add(color2);

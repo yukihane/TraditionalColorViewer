@@ -9,15 +9,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.util.SparseArrayCompat;
 
 /**
- * Fî•ñ‚Ì•\¦‚ğŠÇ—‚·‚é {@link FragmentPagerAdapter}.
+ * è‰²æƒ…å ±ã®è¡¨ç¤ºã‚’ç®¡ç†ã™ã‚‹ {@link FragmentPagerAdapter}.
  */
 public class TraditionalColorPagerAdapter extends FragmentPagerAdapter {
 
-    /** Fî•ñƒŠƒXƒg. */
+    /** è‰²æƒ…å ±ãƒªã‚¹ãƒˆ. */
     private ArrayList<SparseArrayCompat<String>> mList;
 
     /**
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^.
+     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿.
      * @param fm {@link FragmentManager}
      */
     public TraditionalColorPagerAdapter(FragmentManager fm) {
@@ -28,17 +28,17 @@ public class TraditionalColorPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        // ‘ÎÛƒy[ƒW‚ÌFî•ñ‚ğæ“¾
+        // å¯¾è±¡ãƒšãƒ¼ã‚¸ã®è‰²æƒ…å ±ã‚’å–å¾—
         SparseArrayCompat<String> item = mList.get(position);
 
-        // Fî•ñ‚ğ Bundle ‚É‚·‚é
+        // è‰²æƒ…å ±ã‚’ Bundle ã«ã™ã‚‹
         Bundle bundle = new Bundle();
         bundle.putInt("page", position);
         bundle.putString("color", item.get(0));
         bundle.putString("name", item.get(1));
         bundle.putString("description", item.get(2));
 
-        // Fragment ‚ğ‚Â‚­‚è Bundle ‚ğƒZƒbƒg‚·‚é
+        // Fragment ã‚’ã¤ãã‚Š Bundle ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
         TraditionalColorFragment frag = new TraditionalColorFragment();
         frag.setArguments(bundle);
 
@@ -51,16 +51,16 @@ public class TraditionalColorPagerAdapter extends FragmentPagerAdapter {
     }
 
     /**
-     * Fî•ñ‚ğ’Ç‰Á‚·‚é.
-     * @param item Fî•ñ
+     * è‰²æƒ…å ±ã‚’è¿½åŠ ã™ã‚‹.
+     * @param item è‰²æƒ…å ±
      */
     public void add(SparseArrayCompat<String> item) {
         mList.add(item);
     }
 
     /**
-     * Fî•ñ‚ğƒŠƒXƒg‚Å’Ç‰Á‚·‚é.
-     * @param list Fî•ñƒŠƒXƒg
+     * è‰²æƒ…å ±ã‚’ãƒªã‚¹ãƒˆã§è¿½åŠ ã™ã‚‹.
+     * @param list è‰²æƒ…å ±ãƒªã‚¹ãƒˆ
      */
     public void addAll(ArrayList<SparseArrayCompat<String>> list) {
         mList.addAll(list);

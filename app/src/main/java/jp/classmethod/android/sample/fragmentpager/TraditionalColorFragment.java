@@ -3,45 +3,73 @@ package jp.classmethod.android.sample.fragmentpager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import jp.classmethod.android.sample.traditionalcolorviewer.R;
 
 /**
- * Fî•ñ‚ğ•\¦‚·‚é Fragment.
+ * è‰²æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ Fragment.
  */
 public class TraditionalColorFragment extends Fragment {
 
+    private static final String TAG = "EVENT";
+
+    private int page = -1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i(TAG, "onCreateView page: " + page);
 
-        // ƒf[ƒ^‚ğæ“¾
+        // ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
         Bundle bundle = getArguments();
         int page = bundle.getInt("page");
         String color = bundle.getString("color");
         String name = bundle.getString("name");
         String description = bundle.getString("description");
 
-        // View ‚ğ‚Â‚­‚é
+        // View ã‚’ã¤ãã‚‹
         View layout = inflater.inflate(R.layout.fragment_traditional_color, container, false);
         layout.setBackgroundColor(Color.parseColor(color));
-        
-        // F–¼
+
+        // è‰²å
         TextView nameView = (TextView) layout.findViewById(R.id.name_view);
         nameView.setText(name);
-        // à–¾ (F–¼‚Ì—R—ˆ)
+        // èª¬æ˜ (è‰²åã®ç”±æ¥)
         TextView textView = (TextView) layout.findViewById(R.id.text_view);
         textView.setText(description);
-        // FƒR[ƒh
+        // è‰²ã‚³ãƒ¼ãƒ‰
         TextView colorView = (TextView) layout.findViewById(R.id.color_view);
         colorView.setText(color);
-        // ƒy[ƒW
+        // ãƒšãƒ¼ã‚¸
         TextView pageView = (TextView) layout.findViewById(R.id.page_view);
         pageView.setText(String.valueOf(page));
 
         return layout;
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Bundle bundle = getArguments();
+        page = bundle.getInt("page");
+
+        Log.i(TAG, "onCreate page: " + page);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.i(TAG, "onDestroyView page: " + page);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy page: " + page);
+    }
 }
